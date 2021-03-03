@@ -1,0 +1,24 @@
+{% extends 'html/base.html' %}
+
+{% block body %}
+{% load static %}
+<section>
+<div style="width: 99.5%;height: 100%;">
+				<div style="display: inline-flex;">
+					{% for product in allproducts %}
+					<div class="card">
+						<div class="card-div">
+							<a href=""><img src="/media/{{product.img}}">
+								<h3>{{product.name}}</h3>
+								<h4>upto {{product.offer}}% off</h4>
+								<p>price : {{product.price}}.Rs</p>
+							</a>
+							<button><a href="placedBid.jsp">Buy Now</a></button>
+						</div>
+					</div>
+					{% endfor %}
+														
+				</div>
+</div>
+</section>
+{% endblock body %}

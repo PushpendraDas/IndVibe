@@ -1,0 +1,251 @@
+{% extends 'html/base.html' %}
+
+{% block body %}
+{% load static %}
+<head>
+
+	{% block title %}Index{% endblock title %}
+	<meta charset="utf-8">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+</head>
+
+<body id="mypage">
+
+	
+		<section id="slider">
+		<div id="gallery">
+		<img id="image" src="{% static '' %}">
+		<!-- <h2 id="heading">Heading</h2> -->
+	</div>
+	<script type="text/javascript">
+		var img=["../media/slider2.jpg","../media/slider2.jpg"];
+		// var head=["a","b","c","d","e","f","g"];
+		var i=0;
+		function fixed_slide()
+		{
+			document.getElementById('image').src=img[i];
+			// document.getElementById('heading').innerHTML=head[i];
+			i++;
+			if(i==2)
+				i=0;
+		}
+		setInterval("fixed_slide()",2000);
+	</script> 
+	</section> <!-- slider end -->
+	<section class="section1">
+		<div style="width: 99.5%;height: auto;">
+			<div style="display: inline-flex;">
+
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+					  <img src="..." class="" alt="...">
+				  </div>
+				    <a href="#" class="btn">Go somewhere</a>
+				</div>
+
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+					  <img src="..." class="card-img-top" alt="...">
+				  </div>
+				    <a href="#" class="btn ">Go somewhere</a>
+				</div>
+
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+					  <img src="..." class="card-img-top" alt="...">
+				  </div>
+				    <a href="#" class="btn">Go somewhere</a>
+				</div>
+				<div class="card">
+					<div>
+						<h1 class="title">random text here </h1>
+						<button class=" btn-primary">sign in securly</button>
+					</div>
+
+					<div>
+						<img src="">
+					</div>
+
+					<div>
+						<img src="">
+					</div>
+				</div>
+
+			</div>
+
+			<div style="display: inline-flex;">
+
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+					  <img src="..." class="" alt="...">
+				  </div>
+				    <a href="#" class="btn">Go somewhere</a>
+				</div>
+
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+					  <img src="..." class="card-img-top" alt="...">
+				  </div>
+				    <a href="#" class="btn ">Go somewhere</a>
+				</div>
+
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+					  <img src="..." class="card-img-top" alt="...">
+				  </div>
+				    <a href="#" class="btn ">Go somewhere</a>
+				</div>
+
+				<div class="card">
+				  <div class="card-body">
+				    <h5 class="card-title">Card title</h5>
+					  <img src="..." class="card-img-top" alt="...">
+				  </div>
+				    <a href="#" class="btn">Go somewhere</a>
+				</div>
+
+			</div>
+		</div>
+			
+	</section>
+	<section>
+
+		<div class="div-main">		
+			<div class="div-first">
+				<div class="title">
+					<h2  id="home">Home Makeover</h2>
+					<h3 style="color: #B2B2B2;font-weight: 400;font-size: 16px">upto 55% off</h3>
+				</div>
+				<div style="width: 10%">
+					<button class="btn-view"><a href="showHome">View All</a></button>
+				</div>
+			</div>
+			
+			<div style="width: 99.5%;height: 100%;">
+				<div style="display: inline-flex;">
+					{% for homeMade in homeMake %}
+					<div class="card">
+						<div class="card-div">
+							<a href=""><img src="/media/{{homeMade.img}}">
+								<h3>{{homeMade.name}}</h3>
+								<h4>upto {{homeMade.offer}}% off</h4>
+								<p>price : {{homeMade.price}}.Rs</p>
+							</a>
+							<button><a href="placedBid.jsp">Buy Now</a></button>
+						</div>
+					</div>
+					{% endfor %}
+														
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+
+		<div class="div-main">		
+			<div class="div-first">
+				<div class="title">
+					<h2 id="art">Beauty</h2>
+					<h3 style="color: #B2B2B2;font-weight: 400;font-size: 16px">upto 60% off</h3>
+				</div>
+				<div style="width: 10%">
+					<button class="btn-view"><a href="showBeauty">View All</a></button>
+				</div>
+			</div>
+			
+			<div style="width: 99.5%;height: 100%;">
+				<div style="display: inline-flex;">
+					{% for beautyProd in beautyProduct %}
+					<div class="card">
+						<div class="card-div">
+							<a href=""><img src="/media/{{beautyProd.img}}">
+								<h3>{{beautyProd.name}}</h3>
+								<h4>flat {{beautyProd.offer}}% off</h4>
+								<p>price : {{beautyProd.price}}.Rs</p>
+							</a>
+							<button><a href="" onClick="parent.location='productDescription.jsp'">buy now</a></button>
+						</div>
+					</div>
+					{% endfor %}									
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+
+		<div class="div-main">		
+			<div class="div-first">
+				<div class="title">
+					<h2 id="electronics">Sanity Ware</h2>
+					<h3 style="color: #B2B2B2;font-weight: 400;font-size: 16px">upto 70% off</h3>
+				</div>
+				<div style="width: 10%">
+					<button class="btn-view"><a href="showSanitry">View All</a></button>
+				</div>
+			</div>
+			
+			<div style="width: 99.5%;height: 100%;">
+				<div style="display: inline-flex;">
+					{% for sanityware in sanity %}
+					<div class="card">
+						<div class="card-div">
+							<a href=""><img src="/media/{{sanityware.img}}">
+								<h3>{{sanityware.name}}</h3>
+								<h4>flat {{sanityware.offer}}% off</h4>
+								<p>price : {{sanityware.price}}.Rs</p>
+							</a>
+							<button><a href="">buy now</a></button>
+						</div>
+					</div>
+					{% endfor %}
+									
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+
+		<div class="div-main">		
+			<div class="div-first">
+				<div class="title">
+					<h2 id="electronics">Stationaries</h2>
+					<h3 style="color: #B2B2B2;font-weight: 400;font-size: 16px">upto 35% off</h3>
+				</div>
+				<div style="width: 10%">
+					<button class="btn-view"><a href="showStationary">View All</a></button>
+				</div>
+			</div>
+			
+			<div style="width: 99.5%;height: 100%;">
+				<div style="display: inline-flex;">
+					{% for state in station %}
+					<div class="card">
+						<div class="card-div">
+							<a href=""><img src="/media/{{state.img}}">
+								<h3>{{state.name}}</h3>
+								<h4>flat {{state.offer}}% off</h4>
+								<p>price : {{state.price}}.Rs</p>
+							</a>
+							<button><a href="">buy now</a></button>
+						</div>
+					</div>
+					{% endfor %}					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+</body>
+{% endblock body %}

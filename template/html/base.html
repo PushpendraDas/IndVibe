@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock title %}|LocalVocal</title>
+	 <meta charset="utf-8">
+    <!-- sidenav bar --> 
+
+	<!-- local css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+	<!-- bootstrap links  -->
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  <!-- fa fa icons link  -->
+	<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- fa fa - 6 -->
+  <script src="https://kit.fontawesome.com/b7dffad857.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<header>
+		    <!--Navbar-->
+<!-- <div style="width: 100%;height: 100px"></div> -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="demo.html"><marquee direction="down" > <img style="height: 80px;width: 180px" src="../media/saveLocal.jpg"> </marquee> </a>
+   
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <form class="form-inline my-2 my-lg-0 ml-auto">
+    <input class="form-control srch" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3 bg-light" type="submit">Search</button>
+    </form>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" >
+        <a class="nav-link" href="demo.jsp">one
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="product.jsp">two</a>
+      </li>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+
+    </ul>
+    <!-- Links -->
+
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333">
+                <a class="dropdown-item" href="register.jsp">signup</a>
+          <a class="dropdown-item" href="login.jsp">signin</a>
+          <a class="dropdown-item" href="#" onclick="msg()" target="_blank">logout</a>
+          <script>
+              function msg(){
+                  alert ("do you want to exit");
+              }
+          </script>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AboutUs.html">cart</a>
+      </li>
+
+    </ul>
+  </div>
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+	<div style="width:100%;height: 40px;">
+  <ul class="nv-ul">
+    
+    <li class="nv-li"><a href="">All</a></li>
+    <li class="nv-li"><a href="">todays deals's</a></li>
+    <li class="nv-li"><a href="">Customer services</a></li>
+    <li class="nv-li"><a href="">Gift cards</a></li>
+    <li class="nv-li"><a href="/Addproduct">Add Product</a></li>
+    <li class="nv-li"><a href="">registry</a></li>
+  </ul>
+</div>
+<!--/.Navbar-->
+
+	</header>
+
+
+{% block body %}{% endblock body %}
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>Shop Name</h3>
+            <p>
+            	
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+            302 B, 3rd Floor Rajat Complex,<br> 18 Kibey Compound Near Madhumilan Square Infront of Dawa Bazar, Indore<br>
+              <strong>Phone:</strong> (+91) 9926651477,<br>(+91) 9098884202<br>
+              <strong>Email:</strong> indvibeinfotech@gmail.com<br>
+            </p>
+
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+<!--             <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit"  value="Subscribe">
+            </form>
+ -->
+<br><br><br>  <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+           </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        <!-- &copy; Copyright <strong>BizPage</strong>. All Rights Reserved -->
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+        -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

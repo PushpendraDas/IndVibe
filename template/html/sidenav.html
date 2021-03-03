@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *{
+    margin: 0;padding: 0;
+    text-transform: capitalize;
+  }
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav ul,h1 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #111;
+  display: block;
+  transition: 0.3s;
+}
+ul li{
+  list-style: none;
+  padding: 15px 0 0 5px;
+  height: 40px;
+}
+
+.sidenav ul li:hover {
+  background-color: #E8E7E7;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+.catagories{
+  text-decoration: none;
+  border-bottom: 1px solid #818181;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="catagories">
+    <h1>shop by department</h1>
+    <ul>
+      <li>electronics</li>
+      <li>computer</li>
+      <li>smart home</li>
+      <li>art</li>
+      <li>see all</li>
+    </ul>
+  </div>
+  <div class="catagories">
+    <h1>shop by department</h1>
+    <ul>
+      <li>electronics</li>
+      <li>computer</li>
+      <li>smart home</li>
+      <li>art</li>
+      <li>see all</li>
+    </ul>
+  </div>
+  <div class="catagories">
+    <h1>shop by department</h1>
+    <ul>
+      <li>electronics</li>
+      <li>computer</li>
+      <li>smart home</li>
+      <li>art</li>
+      <li>see all</li>
+    </ul>
+  </div>
+
+</div>
+
+<div id="main">
+ 
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "400px";
+  document.getElementById("main").style.marginLeft = "400px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+   
+</body>
+</html> 
